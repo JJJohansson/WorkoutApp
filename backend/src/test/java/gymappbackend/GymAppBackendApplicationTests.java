@@ -1,4 +1,4 @@
-package johansson.janne.gymappbackend;
+package gymappbackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
