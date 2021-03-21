@@ -1,14 +1,18 @@
-package gymappbackend.models;
+package workout_backend.models;
 
-import java.util.Date;
+import javax.persistence.*;
 
-public class Exercise {
+@Entity
+@Table(name = "Type")
+public class Type {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
 
-    public Exercise() { }
+    public Type() {}
 
-    public Exercise(String name) {
+    public Type(String name) {
         this.name = name;
     }
 

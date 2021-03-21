@@ -1,10 +1,10 @@
-package gymappbackend;
+package workout_backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GymAppBackendApplicationTests {
+class WorkoutBackendApplicationTests {
 
 	@Test
 	void contextLoads() {

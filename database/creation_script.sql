@@ -7,12 +7,8 @@ CREATE Table IF NOT EXISTS Workout (
     edited_at date,
     sets integer,
     reps integer,
-    weight integer
-);
-
-CREATE Table IF NOT EXISTS Type (
-    id serial PRIMARY KEY,
-    name text NOT NULL
+    weight integer,
+    CONSTRAINT Workout_fk FOREIGN KEY (type) REFERENCES Type (id)
 );
 
 CREATE Table IF NOT EXISTS Exercise (
@@ -24,4 +20,9 @@ CREATE Table IF NOT EXISTS Workout_Exercise (
     workout_id integer REFERENCES Workout (id) ON UPDATE CASCADE ON DELETE CASCADE,
     exercise_id integer REFERENCES Exercise (id) ON UPDATE CASCADE,
     CONSTRAINT Workout_Exercise_pkey PRIMARY KEY (workout_id, exercise_id)
+);
+
+CREATE Table IF NOT EXISTS Type (
+    id serial PRIMARY KEY,
+    name text NOT NULL
 );

@@ -1,13 +1,12 @@
-package gymappbackend;
+package workout_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GymAppBackendApplication {
+public class WorkoutBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GymAppBackendApplication.class, args);
+		SpringApplication.run(WorkoutBackendApplication.class, args);
 	}
-
 }

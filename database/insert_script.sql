@@ -1,4 +1,4 @@
-INSERT INTO Exercise (name) VALUES
+INSERT INTO Exercise(name) VALUES
 	('Bench press'),
 	('Deadlift'),
 	('Incline bench press'),
@@ -14,3 +14,10 @@ INSERT INTO Exercise (name) VALUES
 	('Leg press'),
 	('Leg Extension'),
 	('Abs');
+
+INSERT INTO Type(name) VALUES
+	('Strength'),
+	('Aerobic'),
+	('Flexibility'),
+	('Balance');
+	

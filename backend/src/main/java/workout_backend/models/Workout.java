@@ -1,12 +1,20 @@
-package gymappbackend.models;
+package workout_backend.models;
 
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+@Entity
+@Table(name = "Workout")
 public class Workout {
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private int type;
-    private int exercise;
+    @Column(name = "exercise")
+    @ManyToMany
+    private List<Exercise> exercises;
     private Date created_at;
     private Date edited_at;
     private int sets;
@@ -15,10 +23,10 @@ public class Workout {
 
     public Workout() { }
 
-    public Workout(String name, int type, int exercise, Date created_at, Date edited_at, int sets, int reps, int weight) {
+    public Workout(String name, int type, List<Exercise> exercises, Date created_at, Date edited_at, int sets, int reps, int weight) {
         this.name = name;
         this.type = type;
-        this.exercise = exercise;
+        this.exercises = exercises;
         this.created_at = created_at;
         this.edited_at = edited_at;
         this.sets = sets;
@@ -46,12 +54,12 @@ public class Workout {
         this.type = type;
     }
 
-    public int getExercise() {
-        return exercise;
+    public List<Exercise> getExercise() {
+        return exercises;
     }
 
-    public void setExercise(int exercise) {
-        this.exercise = exercise;
+    public void setExercise(List<Exercise> exercises) {
+        this.exercises = exercises;
     }
 
     public Date getCreated_at() {
