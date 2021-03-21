@@ -1,4 +1,4 @@
-package workout_backend.service;
+package workout_backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

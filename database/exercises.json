@@ -1,0 +1,47 @@
+[
+    {
+        "name" : "Bench press"
+    },
+    {
+        "name" : "Deadlift"
+    },
+    {
+        "name" : "Incline bench press"
+    },
+    {
+        "name" : "Squat"
+    },
+    {
+        "name" : "Press up"
+    },
+    {
+        "name" : "Pull up"
+    },
+    {
+        "name" : "Lat pulldown"
+    },
+    {
+        "name" : "Biceps curl"
+    },
+    {
+        "name" : "Rowing"
+    },
+    {
+        "name" : "Side Lateral Raise"
+    },
+    {
+        "name" : "Forward Lateral Raise"
+    },
+    {
+        "name" : "Overhead press"
+    },
+    {
+        "name" : "Leg press"
+    },
+    {
+        "name" : "Leg Extension"
+    },
+    {
+        "name" : "Abs"
+    }
+]

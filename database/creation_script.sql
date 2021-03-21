@@ -1,28 +1,26 @@
-CREATE Table IF NOT EXISTS Workout (
-    id serial PRIMARY KEY,
-    name text NOT NULL,
-    type integer NOT NULL,
-    exercise integer NOT NULL,
-    created_at date NOT NULL DEFAULT CURRENT_DATE,
-    edited_at date,
+-- CREATE TABLES
+create table if not exists workout_type (
+    id serial primary key,
+    name text not null
+);
+
+create table if not exists exercise (
+    id serial primary key,
+    name text not null
+);
+
+create table if not exists workout (
+    id serial primary key,
+    name text not null,
+    workout_type_id integer references workout_type (id),
+    exercise_id integer
+);
+
+create table if not exists workout_exercise (
+    workout_id integer references workout (id),
+    exercise_id integer references exercise (id),
     sets integer,
     reps integer,
     weight integer,
-    CONSTRAINT Workout_fk FOREIGN KEY (type) REFERENCES Type (id)
-);
-
-CREATE Table IF NOT EXISTS Exercise (
-    id serial PRIMARY KEY,
-    name text NOT NULL
-);
-
-CREATE Table IF NOT EXISTS Workout_Exercise (
-    workout_id integer REFERENCES Workout (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    exercise_id integer REFERENCES Exercise (id) ON UPDATE CASCADE,
-    CONSTRAINT Workout_Exercise_pkey PRIMARY KEY (workout_id, exercise_id)
-);
-
-CREATE Table IF NOT EXISTS Type (
-    id serial PRIMARY KEY,
-    name text NOT NULL
+    primary key (workout_id, exercise_id)
 );

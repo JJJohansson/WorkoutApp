@@ -4,15 +4,15 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(value = "exercise")
-public class Exercise {
+@Document(value = "workout_type")
+public class WorkoutType {
     @Id
     private ObjectId id;
     private String name;
 
-    public Exercise() { }
+    public WorkoutType() {}
 
-    public Exercise(String name) {
+    public WorkoutType(String name) {
         this.name = name;
     }
 

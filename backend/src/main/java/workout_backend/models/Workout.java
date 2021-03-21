@@ -1,41 +1,35 @@
 package workout_backend.models;
 
-import javax.persistence.*;
-import java.util.Date;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
-@Entity
-@Table(name = "Workout")
+@Document(value = "workout")
 public class Workout {
     @Id
-    @GeneratedValue
-    private int id;
+    private ObjectId id;
     private String name;
-    private int type;
-    @Column(name = "exercise")
-    @ManyToMany
-    private List<Exercise> exercises;
-    private Date created_at;
-    private Date edited_at;
-    private int sets;
-    private int reps;
-    private int weight;
+    private String type;
+    private List<WorkoutExercise> exercises;
+    private String notes;
 
     public Workout() { }
 
-    public Workout(String name, int type, List<Exercise> exercises, Date created_at, Date edited_at, int sets, int reps, int weight) {
+    public Workout(String name, String type, List<WorkoutExercise> exercises, String notes) {
         this.name = name;
         this.type = type;
         this.exercises = exercises;
-        this.created_at = created_at;
-        this.edited_at = edited_at;
-        this.sets = sets;
-        this.reps = reps;
-        this.weight = weight;
+        this.notes = notes;
     }
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,59 +40,27 @@ public class Workout {
         this.name = name;
     }
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public List<Exercise> getExercise() {
+    public List<WorkoutExercise> getExercises() {
         return exercises;
     }
 
-    public void setExercise(List<Exercise> exercises) {
+    public void setExercises(List<WorkoutExercise> exercises) {
         this.exercises = exercises;
     }
 
-    public Date getCreated_at() {
-        return created_at;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
-    }
-
-    public Date getEdited_at() {
-        return edited_at;
-    }
-
-    public void setEdited_at(Date edited_at) {
-        this.edited_at = edited_at;
-    }
-
-    public int getSets() {
-        return sets;
-    }
-
-    public void setSets(int sets) {
-        this.sets = sets;
-    }
-
-    public int getReps() {
-        return reps;
-    }
-
-    public void setReps(int reps) {
-        this.reps = reps;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }
