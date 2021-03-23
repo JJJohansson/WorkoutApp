@@ -1,0 +1,8 @@
+.browseContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.browseContainer > div {
+    flex: 50%;
+}
