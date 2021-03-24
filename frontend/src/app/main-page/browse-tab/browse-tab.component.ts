@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowseCard } from '../browse-card';
+import { BrowsePageWorkout } from 'src/app/models/browse-page-workout';
 
 @Component({
   selector: 'app-browse-tab',
@@ -7,7 +7,7 @@ import { BrowseCard } from '../browse-card';
   styleUrls: ['./browse-tab.component.css']
 })
 export class BrowseTabComponent implements OnInit {
-  browseCardMocks: BrowseCard[] = [
+  browseCardMocks: BrowsePageWorkout[] = [
     {
       title: "Custom workout",
       content: "Your workout plan- exactly the way you like it"

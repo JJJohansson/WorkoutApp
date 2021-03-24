@@ -1,0 +1,16 @@
+.browseCardContainer {
+    margin: 5%;
+}
+
+.browseCard {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}

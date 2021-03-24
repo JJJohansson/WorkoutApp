@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
-import { WorkoutCreationComponent } from './workout-creation/workout-creation.component';
+import { WorkoutCreationPageComponent } from './workout-creation-page/workout-creation-page.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'create', component: WorkoutCreationComponent }
+  { path: 'create', component: WorkoutCreationPageComponent }
 ];
 
 @NgModule({
