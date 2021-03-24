@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BrowseCard } from '../browse-card';
 
 @Component({
-  selector: 'app-browse-card',
-  templateUrl: './browse-card.component.html',
-  styleUrls: ['./browse-card.component.css']
+  selector: 'app-browse-tab-workout',
+  templateUrl: './browse-tab-workout.component.html',
+  styleUrls: ['./browse-tab-workout.component.css']
 })
-export class BrowseCardComponent implements OnInit {
+export class BrowseTabWorkoutComponent implements OnInit {
   @Input() card: BrowseCard;
   cardTitle: string;
   cardContent: string;

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrowseComponent } from './browse.component';
+import { HistoryTabComponent } from './history-tab.component';
 
-describe('BrowseComponent', () => {
-  let component: BrowseComponent;
-  let fixture: ComponentFixture<BrowseComponent>;
+describe('HistoryTabComponent', () => {
+  let component: HistoryTabComponent;
+  let fixture: ComponentFixture<HistoryTabComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BrowseComponent ]
+      declarations: [ HistoryTabComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BrowseComponent);
+    fixture = TestBed.createComponent(HistoryTabComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

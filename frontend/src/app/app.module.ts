@@ -10,23 +10,23 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
-import { BrowseComponent } from './browse/browse.component';
-import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
-import { HistoryComponent } from './history/history.component';
+import { BrowseTabComponent } from './browse-tab/browse-tab.component';
+import { MyWorkoutsTabComponent } from './my-workouts-tab/my-workouts-tab.component';
+import { HistoryTabComponent } from './history-tab/history-tab.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { BrowseCardComponent } from './browse-card/browse-card.component';
+import { BrowseTabWorkoutComponent } from './browse-tab-workout/browse-tab-workout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     WorkoutCreationComponent,
-    BrowseComponent,
-    MyWorkoutsComponent,
-    HistoryComponent,
-    BrowseCardComponent
+    BrowseTabComponent,
+    MyWorkoutsTabComponent,
+    HistoryTabComponent,
+    BrowseTabWorkoutComponent
   ],
   imports: [
     BrowserModule,
