@@ -10,7 +10,6 @@ import java.util.List;
 @Repository
 public interface WorkoutRepository extends MongoRepository<Workout, ObjectId> {
     List<Workout> findAll();
-    Workout save(Workout workout);
-    // Workout updateById(ObjectId id); NEED TO STILL FIGURE THIS ONE OUT
-    void deleteById(ObjectId id); // AND THE RETURN TYPE OF THIS
+    Workout save(Workout workout); // save and update (model to be updated has the id in the request)
+    Workout deleteById(Workout workout);
 }

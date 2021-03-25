@@ -2,6 +2,8 @@ package workout_backend.controllers;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,8 +19,9 @@ public class WorkoutController {
     WorkoutService workoutService;
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.GET, produces = "application/json")
-    public List<Workout> getAllWorkouts() {
-        return workoutService.findAllWorkouts();
+    ResponseEntity<List<Workout>> getAllWorkouts() {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(workoutService.findAllWorkouts());
     }
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.POST, produces = "application/json")
@@ -27,12 +30,12 @@ public class WorkoutController {
     }
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.PUT, produces = "application/json")
-    public String updateWorkout(@RequestBody ObjectId id) {
-        return "Bleep bloop unable to delete object with ID " + id.toString();
+    public Workout updateWorkout(@RequestBody Workout workout) {
+        return workoutService.saveWorkout(workout);
     }
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.DELETE, produces = "application/json")
-    public void deleteWorkout(@RequestBody ObjectId id) {
-        workoutService.deleteWorkout(id);
+    public Workout deleteWorkout(@RequestBody Workout workout) {
+        return workoutService.deleteWorkout(workout);
     }
 }
