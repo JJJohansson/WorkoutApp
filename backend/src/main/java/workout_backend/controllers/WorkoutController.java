@@ -1,13 +1,13 @@
 package workout_backend.controllers;
 
+import com.mongodb.client.result.UpdateResult;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import workout_backend.dao.WorkoutDAO;
 import workout_backend.models.Workout;
 import workout_backend.services.WorkoutService;
 
@@ -19,23 +19,22 @@ public class WorkoutController {
     WorkoutService workoutService;
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.GET, produces = "application/json")
-    ResponseEntity<List<Workout>> getAllWorkouts() {
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(workoutService.findAllWorkouts());
+    List<Workout> getAllWorkouts() {
+        return WorkoutDAO.getAllWorkouts();
     }
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.POST, produces = "application/json")
-    public Workout saveWorkout(@RequestBody Workout workout) {
-        return workoutService.saveWorkout(workout);
+    public boolean saveWorkout(@RequestBody Workout workout) {
+        return WorkoutDAO.saveWorkout(workout);
     }
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.PUT, produces = "application/json")
     public Workout updateWorkout(@RequestBody Workout workout) {
-        return workoutService.saveWorkout(workout);
+        return WorkoutDAO.updateWorkout(workout);
     }
 
     @RequestMapping(value = "/workouts",  method = RequestMethod.DELETE, produces = "application/json")
-    public Workout deleteWorkout(@RequestBody Workout workout) {
-        return workoutService.deleteWorkout(workout);
+    public HttpStatus deleteWorkout(@RequestParam String id) {
+        return workoutService.deleteWorkout(id);
     }
 }

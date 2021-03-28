@@ -6,6 +6,8 @@ public class WorkoutExercise {
     private int reps;
     private int weight;
 
+    public WorkoutExercise() { }
+
     public WorkoutExercise(String name, int sets, int reps, int weight) {
         this.name = name;
         this.sets = sets;

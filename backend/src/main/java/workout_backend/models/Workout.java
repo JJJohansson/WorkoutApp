@@ -1,5 +1,6 @@
 package workout_backend.models;
 
+import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,8 +11,11 @@ import java.util.List;
 public class Workout {
     @Id
     private ObjectId id;
+    @BsonProperty(value = "name")
     private String name;
+    @BsonProperty(value = "type")
     private String type;
+    @BsonProperty(value = "exercises")
     private List<WorkoutExercise> exercises;
     private String notes;
 
