@@ -1,7 +1,9 @@
+import { ObjectId } from "./object-id";
 import { WorkoutExerciseModel } from "./workout-exercise-model";
 
 export interface WorkoutModel {
-    id: number,
+    id: ObjectId,
+    requestId: string,
     name: string,
     type: string,
     exercises: WorkoutExerciseModel,

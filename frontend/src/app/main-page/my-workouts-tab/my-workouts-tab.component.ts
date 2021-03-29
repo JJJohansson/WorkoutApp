@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkoutModel } from 'src/app/models/workout-model';
 import { WorkoutService } from 'src/app/services/workout.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { WorkoutService } from 'src/app/services/workout.service';
 })
 export class MyWorkoutsTabComponent implements OnInit {
   searchTerm = '';
+  workouts: WorkoutModel[] = [];
 
   constructor(private workoutService: WorkoutService) { }
 

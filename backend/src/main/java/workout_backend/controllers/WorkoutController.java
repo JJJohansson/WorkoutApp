@@ -17,6 +17,7 @@ public class WorkoutController {
         return workoutService.getWorkoutById(id);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/workouts",  method = RequestMethod.GET, produces = "application/json")
     List<Workout> getAllWorkouts() {
         return workoutService.getAllWorkouts();
