@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPageComponent } from './main-page/main-page.component';
-import { WorkoutCreationPageComponent } from './workout-creation-page/workout-creation-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { WorkoutCreationPageComponent } from './pages/workout-creation-page/workout-creation-page.component';
+import { ExercisesCreationPageComponent } from './pages/exercises-creation-page/exercises-creation-page.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'create', component: WorkoutCreationPageComponent }
+  { path: 'create/workout', component: WorkoutCreationPageComponent },
+  { path: 'create/exercises', component: ExercisesCreationPageComponent }
 ];
 
 @NgModule({

@@ -1,8 +1,6 @@
 .browseContainer {
     display: flex;
     flex-wrap: wrap;
-}
-
-.browseContainer > div {
-    flex: 50%;
+    justify-content: center;
+    align-content: center;
 }

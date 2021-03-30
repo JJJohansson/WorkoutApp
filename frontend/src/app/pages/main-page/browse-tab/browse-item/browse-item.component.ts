@@ -14,7 +14,6 @@ export class BrowseItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.card);
     this.cardTitle = this.card.title;
     this.cardContent = this.card.content;
   }

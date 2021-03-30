@@ -1,25 +1,21 @@
-<p>
-    <mat-toolbar>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
+<div>
+    <mat-toolbar class="dark-background">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon class="menu-icon">menu</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>dialpad</mat-icon>
-              <span>Redial</span>
-            </button>
             <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voice mail</span>
+              <mat-icon>settings</mat-icon>
+              <span>Settings</span>
             </button>
             <button mat-menu-item>
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
+              <mat-icon>settings</mat-icon>
+              <span>More settings</span>
             </button>
           </mat-menu>
-        <span>Workout App</span>
+        <span class="tool-bar-title">Workout App</span>
     </mat-toolbar>
-    <mat-tab-group>
+    <mat-tab-group mat-align-tabs="center" class="alternate-theme" [color]="'accent'">
         <mat-tab label="BROWSE">
             <app-browse-tab></app-browse-tab>
         </mat-tab>
@@ -30,4 +26,4 @@
             <app-history-tab></app-history-tab>
         </mat-tab>
     </mat-tab-group>
-</p>
+</div>

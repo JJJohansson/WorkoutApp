@@ -1,0 +1,30 @@
+<div class="workout-creation-page">
+  <mat-toolbar class="dark-background">
+    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+    <span class="tool-bar-title">Workout App</span>
+  </mat-toolbar>
+  <div class="workout-creation-container">
+    <div class="new-workout-title-and-subtitle">
+      <h2 class="title-text">ADDING EXERCISES</h2>
+      <p class="subtitle-text">Build your workout by selecting “Add a new exercise” and selecting moves from the list</p>
+    </div>
+    <div class="workout-title-and-type-container dark-background">
+      <mat-form-field appearance="outline">
+        <mat-label>Name your workout</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Type of workout</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="continue-button-container">
+      <button mat-button class="add-workout-continue-button title-text" routerLink="/create/exercises">CREATE A NEW WORKOUT</button>
+    </div>
+  </div>
+</div>

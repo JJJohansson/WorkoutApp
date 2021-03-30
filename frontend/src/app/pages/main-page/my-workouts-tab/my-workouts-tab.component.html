@@ -1,0 +1,19 @@
+<div class="my-workouts dark-background">
+  <mat-card class="search-field-background light-background">
+    <mat-form-field class="search-field">
+        <mat-label>Search for workouts</mat-label>
+        <input matInput type="text" [(ngModel)]="searchTerm">
+        <button mat-button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+  </mat-card>
+  <div class="workouts">
+    <div *ngFor="let workout of workouts">
+      <app-my-workouts-item [workout]="workout"></app-my-workouts-item>
+    </div>
+  </div>
+  <mat-card class="add-workout-background dark-background">
+    <button mat-button class="add-workout-button title-text" routerLink="/create/workout">ADD A NEW WORKOUT</button>
+  </mat-card>
+</div>

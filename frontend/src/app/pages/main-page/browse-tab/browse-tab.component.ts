@@ -27,6 +27,26 @@ export class BrowseTabComponent implements OnInit {
     {
       title: "Ab cruncher",
       content: "Core conditioning with a focus on the abs"
+    },
+    {
+      title: "Ab cruncher",
+      content: "Core conditioning with a focus on the abs"
+    },
+    {
+      title: "Ab cruncher",
+      content: "Core conditioning with a focus on the abs"
+    },
+    {
+      title: "Ab cruncher",
+      content: "Core conditioning with a focus on the abs"
+    },
+    {
+      title: "Ab cruncher",
+      content: "Core conditioning with a focus on the abs"
+    },
+    {
+      title: "Ab cruncher",
+      content: "Core conditioning with a focus on the abs"
     }
   ];
 
