@@ -10,6 +10,8 @@ import { BrowseItemComponent } from './pages/main-page/browse-tab/browse-item/br
 import { BrowseTabComponent } from './pages/main-page/browse-tab/browse-tab.component'
 import { HistoryTabComponent } from './pages/main-page/history-tab/history-tab.component'
 import { MyWorkoutsItemComponent } from './pages/main-page/my-workouts-tab/my-workouts-item/my-workouts-item.component';
+import { ExercisesCreationPageComponent } from './pages/exercises-creation-page/exercises-creation-page.component';
+import { ExerciseItemComponent } from './pages/workout-creation-page/exercise-item/exercise-item/exercise-item.component';
 
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +26,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { ExercisesCreationPageComponent } from './pages/exercises-creation-page/exercises-creation-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ExercisesCreationPageComponent } from './pages/exercises-creation-page/
     HistoryTabComponent,
     BrowseItemComponent,
     MyWorkoutsItemComponent,
-    ExercisesCreationPageComponent
+    ExercisesCreationPageComponent,
+    ExerciseItemComponent
   ],
   imports: [
     BrowserModule,

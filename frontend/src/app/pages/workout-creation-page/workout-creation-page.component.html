@@ -13,18 +13,25 @@
     <div class="workout-title-and-type-container dark-background">
       <mat-form-field appearance="outline">
         <mat-label>Name your workout</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]=workoutName required>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Type of workout</mat-label>
-        <mat-select>
-          <mat-option value="one">First option</mat-option>
-          <mat-option value="two">Second option</mat-option>
+        <mat-select [(ngModel)]="workoutType" required>
+          <mat-option *ngFor="let type of workoutTypes" value="type">{{ type.name }}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="continue-button-container">
-      <button mat-button class="add-workout-continue-button title-text" routerLink="/create/exercises">CONTINUE</button>
+
+    <div class="new-workout-title-and-subtitle">
+      <h2 class="title-text">CREATE YOUR CUSTOM WORKOUT</h2>
+      <p class="subtitle-text">Plan your ultimate workout for a customized training experience with our workout builder</p>
+    </div>
+    <div class="workout-creation-container dark-background">
+      <app-exercise-item *ngFor="let exercise of exercises"></app-exercise-item>
+      <div class="add-workout-button-container">
+        <button mat-button (click)="addNewExerciseDraft()" class="add-workout-continue-button title-text">+ ADD A NEW EXERCISE</button>
+      </div>
     </div>
   </div>
 </div>

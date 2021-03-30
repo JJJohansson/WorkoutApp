@@ -28,7 +28,7 @@ public class WorkoutTypeDAO {
     public static List<WorkoutType> getAllWorkoutTypes() {
         try (MongoClient mongoClient = MongoClients.create(clientSettings)) {
             MongoDatabase workoutDB = mongoClient.getDatabase("workout-db");
-            MongoCollection<WorkoutType> workoutTypeCollection = workoutDB.getCollection("exercise", WorkoutType.class);
+            MongoCollection<WorkoutType> workoutTypeCollection = workoutDB.getCollection("workout_type", WorkoutType.class);
 
             return workoutTypeCollection.find().into(new ArrayList<>())
                     .stream().map(workout -> mapRequestIdToWorkoutType(workout)).collect(Collectors.toList());

@@ -7,6 +7,8 @@
 
 .workout-creation-container {
   width: 75vw;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 h2 {
@@ -59,11 +61,19 @@ h2 {
 .add-workout-continue-button {
   font-family: Jost;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 20px;
 }
 
-.continue-button-container {
+.add-workout-button-container {
   display: flex;
   justify-content: center;
+}
+
+mat-label {
+  color: #A5EAFF
+}
+
+::ng-deep .mat-select-min-line {
+  color: #FFFFFF;
 }

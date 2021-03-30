@@ -1,0 +1,36 @@
+.exercise-container {
+  padding: 25px 0px 25px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.exercise-container > .mat-form-field {
+  width: 50%;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+mat-label {
+  color: #A5EAFF
+}
+
+::ng-deep .mat-select-min-line {
+  color: #FFFFFF;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
