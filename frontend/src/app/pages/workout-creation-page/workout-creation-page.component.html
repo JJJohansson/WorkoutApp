@@ -13,25 +13,38 @@
     <div class="workout-title-and-type-container dark-background">
       <mat-form-field appearance="outline">
         <mat-label>Name your workout</mat-label>
-        <input matInput [(ngModel)]=workoutName required>
+        <input matInput [(ngModel)]="workoutName" required>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Type of workout</mat-label>
         <mat-select [(ngModel)]="workoutType" required>
-          <mat-option *ngFor="let type of workoutTypes" value="type">{{ type.name }}</mat-option>
+          <mat-option *ngFor="let type of workoutTypes" [value]="type.name">{{ type.name }}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
     <div class="new-workout-title-and-subtitle">
-      <h2 class="title-text">CREATE YOUR CUSTOM WORKOUT</h2>
-      <p class="subtitle-text">Plan your ultimate workout for a customized training experience with our workout builder</p>
+      <h2 class="title-text">ADD EXERCISES</h2>
+      <p class="subtitle-text">Build your workout by selecting “Add a new exercise” and selecting moves from the list</p>
     </div>
-    <div class="workout-creation-container dark-background">
-      <app-exercise-item *ngFor="let exercise of exercises"></app-exercise-item>
-      <div class="add-workout-button-container">
-        <button mat-button (click)="addNewExerciseDraft()" class="add-workout-continue-button title-text">+ ADD A NEW EXERCISE</button>
+
+    <div class="workout-items-and-drafts">
+      <div class="workout-creation-container dark-background">
+        <app-workout-exercise-item
+          *ngFor="let workoutExercise of workoutExercises"
+          [workoutExercise]="workoutExercise"
+        ></app-workout-exercise-item>
+
+        <app-workout-exercise-draft
+          (exerciseWorkoutSaveEvent)="onWorkoutExerciseSaveEvent($event)"
+        ></app-workout-exercise-draft>
       </div>
+    </div>
+
+    <div class="button-container">
+      <button mat-button
+        (click)="saveNewWorkout()"
+        class="add-workout-continue-button title-text">CREATE WORKOUT</button>
     </div>
   </div>
 </div>

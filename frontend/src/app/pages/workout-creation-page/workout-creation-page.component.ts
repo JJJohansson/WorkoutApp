@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ExerciseModel } from 'src/app/models/exercise-model';
-import { WorkoutTypeModel } from 'src/app/models/workout-type-model';
-import { Workout } from 'src/app/services/workout';
+import { Workout } from '../../models/workout/workout';
+import { WorkoutTypeModel } from 'src/app/models/workout-type/workout-type-model';
 import { WorkoutTypeService } from 'src/app/services/workout-type/workout-type.service';
+import { WorkoutExercise } from 'src/app/models/workout/workout-exercise';
+import { WorkoutService } from 'src/app/services/workout/workout.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-workout-creation-page',
@@ -10,14 +12,16 @@ import { WorkoutTypeService } from 'src/app/services/workout-type/workout-type.s
   styleUrls: ['./workout-creation-page.component.css']
 })
 export class WorkoutCreationPageComponent implements OnInit {
-  exercises: number[] = [1];
+  workoutExercises: WorkoutExercise[] = [];
   workoutTypes: WorkoutTypeModel[] = [];
-  workoutType: WorkoutTypeModel;
+  workoutType: string;
   workoutName: string;
   workout: Workout;
   type: string;
 
-  constructor(private workoutTypeService: WorkoutTypeService) {
+  constructor(private workoutTypeService: WorkoutTypeService,
+    private workoutService: WorkoutService,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -27,7 +31,17 @@ export class WorkoutCreationPageComponent implements OnInit {
     })
   }
 
-  addNewExerciseDraft(): void {
-    this.exercises.push(1); // NOW THIS IS HACKY, WOO!
+  onWorkoutExerciseSaveEvent(workoutExercise: WorkoutExercise) {
+    if (!!workoutExercise) {
+      this.workoutExercises.push(workoutExercise);
+    }
+  }
+
+  saveNewWorkout(): void {
+    const workout: Workout = new Workout(null, null, this.workoutName, this.workoutType, this.workoutExercises);
+    console.log(workout)
+    this.workoutService.saveWorkout(workout).subscribe(response => {
+      this.router.navigateByUrl('');
+    });
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Workout } from 'src/app/services/workout';
+import { Workout } from 'src/app/models/workout/workout';
 import { WorkoutService } from 'src/app/services/workout/workout.service';
 
 @Component({

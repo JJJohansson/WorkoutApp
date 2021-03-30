@@ -1,0 +1,28 @@
+.workout {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+  margin-bottom: 25px;
+  width: 60%;
+}
+
+.add-workout-background {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.add-workout-button {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}

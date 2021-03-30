@@ -1,13 +1,15 @@
-.exercise-container {
+.exercise-draft-container {
   padding: 25px 0px 25px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  width: 60%;
 }
 
-.exercise-container > .mat-form-field {
-  width: 50%;
+.exercise-draft-container > .mat-form-field {
+  width: 80%;
   font-family: Jost;
   font-style: normal;
   font-weight: normal;
@@ -33,4 +35,20 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.add-workout-continue-button {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+mat-label {
+  color: #A5EAFF
+}
+
+::ng-deep .mat-select-min-line {
+  color: #FFFFFF;
 }

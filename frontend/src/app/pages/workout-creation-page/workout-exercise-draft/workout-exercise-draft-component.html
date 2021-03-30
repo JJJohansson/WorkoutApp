@@ -1,8 +1,8 @@
-<div class="exercise-container">
+<div class="exercise-draft-container light-background">
   <mat-form-field appearance="outline">
     <mat-label>Type of workout</mat-label>
     <mat-select [(ngModel)]="exercise" required>
-      <mat-option *ngFor="let exercise of exercises" value="exercise">{{ exercise.name }}</mat-option>
+      <mat-option *ngFor="let exercise of exercises" [value]="exercise.name">{{ exercise.name }}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="outline">
@@ -17,4 +17,5 @@
     <mat-label>Weight</mat-label>
     <input matInput type="number" [(ngModel)]="weight" required>
   </mat-form-field>
+  <button mat-button (click)="saveExercise()" class="add-workout-continue-button title-text">ADD EXERCISE</button>
 </div>

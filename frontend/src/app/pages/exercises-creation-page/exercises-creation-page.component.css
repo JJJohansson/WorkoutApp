@@ -9,10 +9,6 @@
   width: 75vw;
 }
 
-h2 {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 .workout-title-and-type-container {
   padding: 25px 0px 25px 0px;
   display: flex;

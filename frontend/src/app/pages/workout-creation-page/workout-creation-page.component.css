@@ -6,13 +6,11 @@
 }
 
 .workout-creation-container {
-  width: 75vw;
   margin-bottom: 25px;
-  padding-bottom: 25px;
-}
-
-h2 {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 50px 25px 50px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .workout-title-and-type-container {
@@ -65,7 +63,7 @@ h2 {
   font-size: 20px;
 }
 
-.add-workout-button-container {
+.button-container {
   display: flex;
   justify-content: center;
 }
@@ -77,3 +75,8 @@ mat-label {
 ::ng-deep .mat-select-min-line {
   color: #FFFFFF;
 }
+
+.workout-items-and-drafts {
+  width: 70vw;
+}
+

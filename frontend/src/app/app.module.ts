@@ -11,7 +11,7 @@ import { BrowseTabComponent } from './pages/main-page/browse-tab/browse-tab.comp
 import { HistoryTabComponent } from './pages/main-page/history-tab/history-tab.component'
 import { MyWorkoutsItemComponent } from './pages/main-page/my-workouts-tab/my-workouts-item/my-workouts-item.component';
 import { ExercisesCreationPageComponent } from './pages/exercises-creation-page/exercises-creation-page.component';
-import { ExerciseItemComponent } from './pages/workout-creation-page/exercise-item/exercise-item/exercise-item.component';
+import { WorkoutExerciseDraftComponent } from './pages/workout-creation-page/workout-exercise-draft/workout-exercise-draft-component';
 
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { WorkoutExerciseItemComponent } from './pages/workout-creation-page/workout-exercise-item/workout-exercise-item/workout-exercise-item.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatSelectModule } from '@angular/material/select';
     BrowseItemComponent,
     MyWorkoutsItemComponent,
     ExercisesCreationPageComponent,
-    ExerciseItemComponent
+    WorkoutExerciseDraftComponent,
+    WorkoutExerciseItemComponent
   ],
   imports: [
     BrowserModule,
